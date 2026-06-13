@@ -1,4 +1,3 @@
-/* Particles.js Configuration Blueprint */
 particlesJS("particles-js", {
   "particles": {
     "number": { 
@@ -39,4 +38,21 @@ particlesJS("particles-js", {
     }
   },
   "retina_detect": true
+});
+document.addEventListener("DOMContentLoaded", () => {
+    const menuToggle = document.getElementById("mobile-menu");
+    const navMenu = document.querySelector(".nav-menu");
+
+    if (menuToggle && navMenu) {
+        menuToggle.addEventListener("click", () => {
+            navMenu.classList.toggle("active");
+            
+            const icon = menuToggle.querySelector("i");
+            if (navMenu.classList.contains("active")) {
+                icon.className = "fas fa-times";
+            } else {
+                icon.className = "fas fa-bars";
+            }
+        });
+    }
 });
